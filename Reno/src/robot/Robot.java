@@ -7,6 +7,27 @@ public class Robot {
 	private int ataque;
 	private int defensa;
 
+	// Creo un constructor parametrizado con sólo el nombre como parámetro. Los
+	// puntos de vida son 100 por defecto.
+	public Robot(String nombre) {
+		this.nombre = nombre;
+		this.puntosVida = 100;
+		this.ataque = generaAtaque();
+		this.defensa = generaDefensa();
+	}
+
+	// Creo el método para atacar entre 0 y 20 aleatoriamente
+	private int generaAtaque() {
+		int atacar = (int) (Math.random() * 21);
+		return atacar;
+	}
+
+	//// Creo el método para defender entre 0 y 100 aleatoriamente
+	private int generaDefensa() {
+		int defender = (int) (Math.random() * 101);
+		return defender;
+	}
+
 	// Creo los setters y los getters
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
